@@ -1,10 +1,10 @@
+
 #### 小程序 Serverless 快速入门示例
 
 使用前：请阅读 Demo 每一步的描述
 
 目录说明：
 
-```bash
 ├── LICENSE
 ├── README.md
 ├── client // 小程序的代码
@@ -19,4 +19,5 @@
 ├── mini.project.json
 └── server // 云端的代码
     └── functions // 云函数代码目录
-```
+# zfb-mini-program
+支付宝小程序
