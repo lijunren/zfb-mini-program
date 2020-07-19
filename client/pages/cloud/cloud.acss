@@ -1,0 +1,11 @@
+.cloud .qrcode {
+  text-align: center;
+}
+
+.cloud .qrcode-image {
+  max-width: 100%;
+}
+
+.cloud .red{
+  color: #F5222D;
+}

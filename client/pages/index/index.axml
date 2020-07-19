@@ -1,0 +1,24 @@
+<view>
+  <!-- header start -->
+  <app-header>
+    <view slot="title">{{title}}</view>
+  </app-header>
+  <!-- header end -->
+  <view>
+    <list class="list">
+      <block a:for="{{listItems2}}">
+        <list-item
+          arrow="{{item.arrow}}"
+          index="items2-{{index}}"
+          key="items2-{{index}}"
+          last="{{index === (items2.length - 1)}}"
+        >
+          <navigator url="{{item.url}}">{{item.title}}</navigator>
+        </list-item>
+      </block>
+    </list>
+    <button type="primary" onTap="goCouponList">
+    优惠券
+    </button>
+  </view>
+</view>

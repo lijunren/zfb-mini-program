@@ -1,0 +1,53 @@
+<view class="cloud">
+  <view class="content">
+    <app-panel title="了解云调用">
+      <view class="row">云调用对通用基础API及常用的小程序业务API进行了封装，方便开发者在小程序中直接调用。</view>
+    </app-panel>
+    <app-panel title="前提条件">
+      <view class="row">已完成开通小程序Serverless的相关步骤</view>
+      <view class="row">在 IDE 绑定 Serverless 流程中服务空间的小程序</view>
+      <app-image className="appImage" url="https://gw.alipayobjects.com/mdn/rms_12b916/afts/img/A*xMWJRrs4rTsAAAAAAAAAAABkARQnAQ" />
+    </app-panel>
+    <app-panel title="操作步骤">
+      <view class="row">
+        <view>1. 开通云调用：在阿里云控制台左侧导航栏，选择小程序Serverless > 扩展能力，在扩展能力页面，单击【立即开通】。在弹出的对话框，单击前往RAM进行授权，然后单击同意授权允许小程序访问函数计算服务。</view>
+        <app-image className="appImage" url="https://gw.alipayobjects.com/mdn/rms_12b916/afts/img/A*HDQZS7uc8ckAAAAAAAAAAABkARQnAQ" />
+        <app-image className="appImage" url="https://gw.alipayobjects.com/mdn/rms_12b916/afts/img/A*3EsHQY0jGG0AAAAAAAAAAABkARQnAQ" />
+        <view>RAM进行授权完成后，在扩展能力中进行云调用授权：</view>
+        <app-image className="appImage" url="https://gw.alipayobjects.com/mdn/rms_12b916/afts/img/A*IhA_RKTtmwsAAAAAAAAAAABkARQnAQ" />
+        <app-image className="appImage" url="https://gw.alipayobjects.com/mdn/rms_12b916/afts/img/A*Ap4kRJhn4y8AAAAAAAAAAABkARQnAQ">
+        <view>
+          <view>
+            <app-text-bold>在使用前需要检查的地方：</app-text-bold>
+          </view>
+          <view>
+            <view class="word-wrap">a. 由于云调用依赖函数计算的能力（需要调用云函数），所以需要进入 https://fc.console.aliyun.com 查看“函数计算”是否开通，如果函数计算未开通，会有如下提示，引导去开通：</view>
+            <app-image className="app-image" url="https://gw.alipayobjects.com/mdn/rms_12b916/afts/img/A*wGK2SJWrGToAAAAAAAAAAABkARQnAQ" />
+            <view class="word-wrap">b. 云调用是否开通成功，扩展能力的地址为：https://mp.console.aliyun.com/cloudDev/extensions</view>
+          </view>
+        </view>
+      </view>
+      <view class="row">2. 安装并初始化SDK</view>
+      <view class="row">a. 在小程序项目的根目录执行以下命令安装SDK。</view>
+      <view class="row">npm install alipay-serverless-sdk --save</view>
+      <view class="row">3. 使用云调用</view>
+      <view class="row">
+        a. 在<app-text-bold>client/pages/cloud/cloud.js</app-text-bold>路径中取消代码注释。
+        <app-image className="appImage" url="https://gw.alipayobjects.com/mdn/rms_2c53ee/afts/img/A*FIYgRYM9WrkAAAAAAAAAAABkARQnAQ" />
+      </view>
+      <view class="row">
+        b. 获取<app-text-bold>小程序二维码</app-text-bold>功能。在支付宝小程序管理中心，进入<app-text-bold>小程序详情页面</app-text-bold> > <app-text-bold>开发管理</app-text-bold> > <app-text-bold>功能列表</app-text-bold> > <app-text-bold>添加功能</app-text-bold> > 勾选 <app-text-bold>小程序二维码</app-text-bold> 功能 > <app-text-bold>确认</app-text-bold>
+        <app-image className="appImage" url="https://gw.alipayobjects.com/mdn/rms_10e969/afts/img/A*JFEDTYzzv_MAAAAAAAAAAABkARQnAQ"></app-image>
+      </view>
+      <view class="row"> c. 点击获取信息按钮，将会通过云调用的方式在小程序前端发起一个请求，生成小程序的二维码。</view>
+    </app-panel>
+  </view>
+
+  <view class="try">
+    <app-try name="生成小程序推广二维码" onTry="handleTry">
+      <view class="qrcode">
+        <image class="qrcode-image" mode="widthFix" src="{{qrCodeUrl}}"/>
+      </view>
+    </app-try>
+  </view>
+</view>

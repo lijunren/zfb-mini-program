@@ -1,0 +1,20 @@
+{
+  "pages": [
+    "pages/coupon/coupon",
+    "pages/index/index",
+    "pages/open/open",
+    "pages/upload/upload",
+    "pages/database/database",
+    "pages/functions/functions",
+    "pages/cloud/cloud",
+    "pages/couponDetail/couponDetail"
+  ],
+  "window": {
+    "defaultTitle": "",
+    "allowsBounceVertical": "NO",
+    "titleBarColor": "#fff",
+    "titlePenetrate": "YES",
+    "showTitleLoading": "YES",
+    "backgroundColor": "#fff"
+  }
+}

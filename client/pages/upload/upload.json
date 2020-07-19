@@ -1,0 +1,9 @@
+{
+  "defaultTitle": "上传文件",
+  "usingComponents": {
+    "app-try": "/components/appTry/appTry",
+    "app-image": "/components/appImage/appImage",
+    "app-panel": "/components/appPanel/appPanel",
+    "app-text-bold": "/components/appTextBold/appTextBold"
+  }
+}

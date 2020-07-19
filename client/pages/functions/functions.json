@@ -1,0 +1,12 @@
+{
+  "defaultTitle": "了解云函数",
+  "usingComponents": {
+    "app-image": "/components/appImage/appImage",
+    "app-user-info": "/components/appUserInfo/appUserInfo",
+    "app-json-preview": "/components/appJsonPreview/appJsonPreview",
+    "app-try": "/components/appTry/appTry",
+    "app-panel": "/components/appPanel/appPanel",
+    "app-text-bold": "/components/appTextBold/appTextBold",
+    "calendar": "mini-antui/es/calendar/index"
+  }
+}

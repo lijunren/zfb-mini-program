@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "app-header": "/components/appHeader/index",
+    "list": "mini-antui/es/list/index",
+    "list-item": "mini-antui/es/list/list-item/index",
+    "app-page-footer": "/components/appPageFooter/appPageFooter"
+  },
+  "titleBarColor": "#118eea"
+}

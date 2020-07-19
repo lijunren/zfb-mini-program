@@ -1,0 +1,9 @@
+<view class="appTry">
+  <view class="experienceTitle">动手试试</view>
+  <view class="experienceContent">
+    <slot />
+  </view>
+  <button class="btnOperate" type="primary" disabled="{{disabled}}" loading="{{loading}}" onTap="onClick">
+    {{name}}
+  </button>
+</view>

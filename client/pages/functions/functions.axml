@@ -1,0 +1,43 @@
+<view class="pageFunctions">
+  <view class="description">
+    每一个云函数可视为一个接口。本教程介绍如何新建、部署、调用和查看云函数。        
+  </view>
+  <view class="content">
+    <app-panel title="前提条件">
+      <view class="row">已完成<app-text-bold>开通小程序Serverless</app-text-bold>的相关步骤</view>
+      <view class="row">
+        <view>在 server 目录上右键，【关联 Serverless】空间，步骤如下：</view>
+        <view>(1) 点击【关联 Serverless】</view>
+        <app-image className="appImage" url="https://gw.alipayobjects.com/mdn/rms_12b916/afts/img/A*5i2wR4tYm3YAAAAAAAAAAABkARQnAQ" />
+        <view>(2) 如果未绑定阿里云帐号，会先提示去授权</view>
+        <app-image className="appImage" url="https://gw.alipayobjects.com/mdn/rms_12b916/afts/img/A*s9HUQ7v7fUAAAAAAAAAAAABkARQnAQ" />
+        <app-image className="appImage" url="https://gw.alipayobjects.com/mdn/rms_12b916/afts/img/A*1BGLRqRmFscAAAAAAAAAAABkARQnAQ" /> 
+        <view>(3) 授权完成后，重新右键，开始【关联 Serverless】，关联成功后会在菜单中展示空间名称，如下：</view>
+        <app-image className="appImage" url="https://gw.alipayobjects.com/mdn/rms_12b916/afts/img/A*AhfGRZD78JoAAAAAAAAAAABkARQnAQ" />  
+      </view>
+    </app-panel>
+    <app-panel title="操作步骤">
+      <view class="row">
+        <view>1. 新建云函数。</view>
+        <view>在云函数目录 server/functions 右键选择新建云函数，创建名为“getSum”的云函数</view>
+      </view>
+      <view class="row">2. 部署云函数。</view>
+      <view class="row">在云函数 getSum 上右键选择“部署云函数”</view>            
+      <view class="row">3. 调用云函数。</view>
+      <view class="row">a. 在 client/pages/functions/functions.js 中取消代码注释。</view>            
+      <view class="row">
+        a. 点击<app-text-bold>开始计算</app-text-bold>按钮，将会向云函数发起一个请求，会返回函数执行结果，这里将返回 1 + 1 的和。
+      </view>
+      <view class="row">
+        b. 查看调用日志。在阿里云控制台云函数页面，选择指定的云函数，进入云函数详情页点击日志查看调用日志。
+        <app-image className="appImage" url="https://gw.alipayobjects.com/mdn/rms_10e969/afts/img/A*RDOpS70BxFEAAAAAAAAAAABkARQnAQ" />
+      </view>
+    </app-panel>
+  </view>
+
+  <view class="try">
+    <app-try name="开始计算" onTry="handleTry">
+      <view>1 + 1 = {{sum !== '' ? sum : '?'}}</view>
+    </app-try>
+  </view>
+</view>

@@ -1,0 +1,17 @@
+<view class="content">
+  <view class="title">总会发现您所期望的，欢迎您的光临！</view>
+  <view a:for="{{list}}" onTap="toCouponDetail" a:key="{{item._id}}"
+    data-id="{{item._id}}">
+    <card
+      title="{{item.goods_title}}"
+      thumb="{{item.goods_cover[0]}}"
+      subTitle="{{item.goods_tag}}">
+    </card>
+  </view>
+  <view a:if="{{showLoading}}" class="more">
+    加载中···
+  </view>
+  <view a:if="{{end}}" class="more">
+    没有更多···
+  </view>
+</view>

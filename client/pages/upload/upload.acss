@@ -1,0 +1,16 @@
+.pageUpload .try {
+  margin-top: 32rpx;
+  padding: 32rpx 32rpx 80rpx;
+  background: #fff;
+}
+
+.pageUpload .filePath {
+  margin-top: 26rpx;
+  font-size: 28rpx;
+  color: #999;
+  word-break: break-all;
+}
+
+.pageUpload .imageWrap {
+  text-align: center;
+}

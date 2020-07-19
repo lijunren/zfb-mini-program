@@ -1,0 +1,29 @@
+<view class="pageUpload">
+  <view class="description">
+    本教程举例说明通过Serverless 将文件上传至云存储中。
+  </view>
+  <view class="content">
+    <app-panel title="前提条件">
+      <view class="row">已完成<app-text-bold>开通小程序Serverless</app-text-bold>的相关步骤</view>
+    </app-panel>
+    <app-panel title="操作步骤">
+      <view class="row">1. 查看 pages/upload/upload.js 文件，handleTry 方法定义了上传文件的逻辑。</view>
+      <view class="row">2. 点击本页面下方的<app-text-bold>上传图片</app-text-bold>按钮，选择本地图片上传。</view>
+      <view class="row">
+        3. 点击 阿里云控制台页面 左侧菜单<app-text-bold>云存储</app-text-bold>，查看并管理上传的图片。
+        <app-image className="appImage" url="https://gw.alipayobjects.com/mdn/rms_10e969/afts/img/A*SVMvR7AVaOkAAAAAAAAAAABkARQnAQ" />
+      </view>
+    </app-panel>
+  </view>
+
+  <view class="try">
+    <app-try name="上传图片" onTry="handleTry">
+      <view a:if="{{imageUrl}}" class="showImage">
+        <view class="imageWrap">
+          <app-image className="appImage" url="{{imageUrl}}" />
+        </view>
+        <view class="filePath">线上路径：{{imageUrl}}</view>
+      </view>
+    </app-try>
+  </view>
+</view>

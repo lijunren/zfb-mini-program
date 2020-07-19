@@ -1,0 +1,9 @@
+{
+  "defaultTitle": "了解云调用",
+  "usingComponents": {
+    "app-image": "/components/appImage/appImage",
+    "app-try": "/components/appTry/appTry",
+    "app-panel": "/components/appPanel/appPanel",
+    "app-text-bold": "/components/appTextBold/appTextBold"
+  }
+}

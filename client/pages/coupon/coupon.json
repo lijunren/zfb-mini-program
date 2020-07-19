@@ -1,0 +1,6 @@
+{
+  "defaultTitle": "券列表",
+  "usingComponents": {
+    "card":"mini-antui/es/card/index"
+  }
+}

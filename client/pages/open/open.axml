@@ -1,0 +1,49 @@
+<view class="pageOpen">
+  <view class="description">
+    <view class="row">
+      本教程主要介绍如何在阿里云开通小程序云 、创建Serverless服务空间、修改demo的Serverless配置。
+    </view>
+    <view class="row">
+      若已创建服务空间并修改好配置，可以返回本教程首页，进入下一节。
+    </view>
+  </view>
+  <view class="content">
+    <app-panel title="前提条件">
+      <view class="row">已注册阿里云账号并完成了实名认证。</view>
+    </app-panel>
+    <app-panel title="操作步骤">
+      <view class="row">
+        1. 点击 IDE 左侧<app-text-bold>云服务</app-text-bold>按钮。
+       <view class="row">需要绑定阿里云账号后，才能在IDE上部署后端代码到小程序云。</view>
+        <app-image className="appImage" url="https://gw.alipayobjects.com/mdn/rms_10e969/afts/img/A*olz4RqppwOMAAAAAAAAAAABkARQnAQ" />
+      </view>
+      <view class="row">
+        2. 进入小程序云开通页面，勾选服务协议并点击<app-text-bold>立即开通</app-text-bold>按钮。
+        <app-image className="appImage" url="https://gw.alipayobjects.com/mdn/rms_10e969/afts/img/A*yL-BSIaR6CEAAAAAAAAAAABkARQnAQ" />
+      </view>
+      <view class="row">
+        3. 进入小程序云欢迎页面，点击<app-text-bold>开始使用</app-text-bold>按钮。
+        <app-image className="appImage" url="https://gw.alipayobjects.com/mdn/rms_10e969/afts/img/A*bpaUSpYMiggAAAAAAAAAAABkARQnAQ" />
+      </view>
+      <view class="row">
+        4. 点击 阿里云控制台页面 左侧菜单<app-text-bold>小程序Serverless</app-text-bold>下的<app-text-bold>服务空间管理</app-text-bold>，进入服务空间管理页面。点击<app-text-bold>创建服务空间</app-text-bold>完成创建。
+        <app-image className="appImage" url="https://gw.alipayobjects.com/mdn/rms_10e969/afts/img/A*w_fJS40MWY4AAAAAAAAAAABkARQnAQ" />
+      </view>
+      <view class="row">
+        5. 点击 阿里云控制台页面 左侧菜单<app-text-bold>设置</app-text-bold>。添加支付宝密钥。将小程序AppID、小程序应用私钥、支付宝公钥加入Serverless配置中，以便在云函数中可以直接调用支付宝接口。
+        <app-image className="appImage" url="https://gw.alipayobjects.com/mdn/rms_10e969/afts/img/A*CwZETq6nuD4AAAAAAAAAAABkARQnAQ" />
+      </view>
+      <view class="row">
+        6. 在client文件夹的app.js中填写服务空间space的spaceId、secret和小程序的appId信息
+        <app-image className="appImage" url="https://gw.alipayobjects.com/mdn/rms_12b916/afts/img/A*MVZgTIhexG8AAAAAAAAAAABkARQnAQ" />
+      </view>
+    </app-panel>
+  </view>
+  <app-page-footer>
+    <view class="desc">
+      <view>说明：</view>
+      <view>云服务开通后会自动引入SDK，在该小程序可使用小程序 Serverless的全局变量。</view>
+      <view>右键点击根目录文件夹，切换正式、测试环境。</view>
+    </view>
+  </app-page-footer>
+</view>

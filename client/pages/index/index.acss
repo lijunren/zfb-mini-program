@@ -1,0 +1,9 @@
+.list {
+	margin-top: 20rpx;
+	font-size: 34rpx;
+}
+
+.list navigator {
+  display: inline-block;
+  width: 100%;
+}

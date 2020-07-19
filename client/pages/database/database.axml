@@ -1,0 +1,142 @@
+<view class="pageDatabase">
+  <view class="description">
+    本教实现在 Serverless 中创建数据库，并在小程序中查看生成的数据表。
+  </view>
+  <view>
+    <app-step data="{{stepConfig}}" current="{{current}}" onChange="onChangeStep">
+      <view slot="content">
+        <block a:if="{{current === 0}}">
+          <app-panel title="前提条件">
+            <view class="row">已完成<app-text-bold>开通小程序Serverless</app-text-bold>的相关步骤</view>
+          </app-panel>
+          <app-panel title="操作步骤">
+            <view class="row">1. 新建数据表</view>
+            <view class="row">
+              <view>点击 阿里云控制台页面 左侧菜单<app-text-bold>云数据库</app-text-bold>，创建名称为test的数据表。</view>
+              <app-image className="appImage" url="https://gw.alipayobjects.com/mdn/rms_10e969/afts/img/A*Nk6dSquyKQsAAAAAAAAAAABkARQnAQ" />
+            </view>
+          </app-panel>
+        </block>
+
+        <block a:if="{{current === 1}}">
+          <app-panel className="dbPanel">
+            <view class="row">2. 修改数据库权限</view>
+            <view class="row">
+              <view>点击修改数据库权限的“钥匙”的icon，将数据库的数据权限由“false”改为“true”，允许客户端读写数据库信息。</view>
+              <app-image className="appImage" url="https://gw.alipayobjects.com/mdn/rms_10e969/afts/img/A*lRBiRJ5g6kIAAAAAAAAAAABkARQnAQ" />
+            </view>
+          </app-panel>
+        </block>
+
+        <block a:if="{{current === 2}}">
+          <app-panel className="dbPanel">
+            <view class="row">3. 新增记录</view>
+            <view class="row">a. 打开pages/database/database.js文件，定位到onAdd方法。</view>
+            <view class="row">
+              b. 鼠标选中被注释代码，按<app-text-bold>ctrl+/</app-text-bold>键，取消注释。这段代码示例了如何向数据表 test 写入数据。
+              <view class="row">
+                c. 保存文件，模拟器重新编译后，点击<app-text-bold>新增记录</app-text-bold>按钮。
+              </view>
+              <view class="row">
+                d. 在阿里云控制台云数据库页面，选择数据表test，查看刚刚添加的记录。
+              </view>
+              <view class="row">
+                e. 完成上述步骤后，出现并点击<app-text-bold>下一步</app-text-bold>按钮。
+              </view>
+          </app-panel>
+          <view class="tryWrap">
+            <view class="try">
+              <app-try name="新增记录" onTry="onAction" action="onAdd">
+                <app-json-preview value="{{newData}}" />
+              </app-try>
+            </view>
+          </view>
+        </block>
+
+        <block a:if="{{current === 3}}">
+          <app-panel className="dbPanel">
+            <view class="row">4. 查询记录</view>
+            <view class="row">
+              a. 打开pages/database/database.js文件，定位到 onQuery 方法。
+            </view>
+            <view class="row">
+              b. 鼠标选中被注释代码，按<app-text-bold>ctrl+/</app-text-bold>
+              键，取消注释。这段代码示例了如何从数据库中进行查询。
+            </view>
+            <view class="row">
+              c. 保存文件，模拟器重新编译后，点击<app-text-bold>查询记录</app-text-bold>按钮。
+            </view>
+            <view class="row">
+              d. 完成上述步骤后，出现并点击<app-text-bold>下一步</app-text-bold>按钮。
+            </view>
+          </app-panel>
+          <view class="tryWrap">
+            <view class="try">
+              <app-try name="查询记录" onTry="onAction" action="onQuery">
+                <app-json-preview value="{{dbData}}" />
+              </app-try>
+            </view>
+          </view>
+        </block>
+
+        <block a:if="{{current === 4}}">
+          <app-panel className="dbPanel">
+            <view class="row"5. 更新记录</view>
+            <view class="row">
+              a. 打开pages/database/database.js文件，定位到onUpdate方法。
+            </view>
+            <view class="row">
+              b. 鼠标选中被注释代码，按<app-text-bold>ctrl+/</app-text-bold>键，取消注释。这段代码示例了如何对最新一条数据的count字段进行修改。
+            </view>
+            <view class="row">
+              c. 保存文件，模拟器重新编译后，点击<app-text-bold>更新记录</app-text-bold>按钮。在阿里云控制台云数据库页面，选择数据表test
+              ，查看刚刚更新的记录。
+            </view>
+            <view class="row">
+              d. 完成上述步骤后，出现并点击<app-text-bold>下一步</app-text-bold>按钮。
+            </view>
+          </app-panel>
+          <view class="tryWrap">
+            <view class="try">
+              <app-try name="更新记录" onTry="onAction" action="onUpdate">
+                <view class="updateTip">原数据：</view>
+                <app-json-preview value="{{originData}}" />
+                <view class="updateTip">更新后：</view>
+                <app-json-preview value="{{updatedData}}" />
+              </app-try>
+            </view>
+          </view>
+        </block>
+
+        <block a:if="{{current === 5}}">
+          <app-panel className="dbPanel">
+            <view class="row">6. 删除记录</view>
+            <view class="row">
+              a. 打开pages/databaseGuide/index.js文件，定位到onDelete方法。
+            </view>
+            <view class="row">
+              b. 将被注释代码解除注释，这段代码示例了如何从数据库中进行删除最新添加的记录。
+            </view>
+            <view class="row">
+              c. 保存文件，模拟器重新编译后，点击<app-text-bold>删除</app-text-bold>按钮。在阿里云控制台云数据库页面，选择数据表test，查看最新的记录是否已被删除。
+            </view>
+            <view class="row">
+              d. 完成上述步骤后，点击<app-text-bold>完成</app-text-bold>按钮返回首页。
+            </view>
+          </app-panel>
+          <view class="tryWrap">
+            <view class="try">
+              <app-try name="删除" onTry="onAction" action="onDelete">
+                <block a:if="{{deletedData._id !== undefined}}">
+                  <view class="deleteBack">
+                    删除记录<text>_id: {{deletedData._id}}</text>
+                  </view>
+                </block>
+              </app-try>
+            </view>
+          </view>
+        </block>
+      </view>
+    </app-step>
+  </view>
+</view>

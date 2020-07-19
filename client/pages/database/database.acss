@@ -1,0 +1,27 @@
+page {
+  background: #fff;
+}
+
+.pageDatabase .tryWrap {
+  overflow: hidden;
+  background: #f7f7f7;
+}
+
+.pageDatabase .try {
+  padding-bottom: 0;
+}
+
+.pageDatabase .dbPanel {
+  padding-bottom: 32rpx;
+}
+
+.pageDatabase .deleteBack {
+  line-height: 1.6;
+  font-size: 32rpx;
+  color: #999;
+  word-break: break-all;
+}
+
+.pageDatabase .updateTip {
+  margin: 20rpx 0;
+}

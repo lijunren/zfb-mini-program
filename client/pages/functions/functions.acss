@@ -1,0 +1,7 @@
+.pageFunctions .qrcode {
+  text-align: center;
+}
+
+.pageFunctions .qrcode-image {
+  max-width: 100%;
+}

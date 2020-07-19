@@ -1,0 +1,18 @@
+.content{
+  background-color: #eeeeee;
+  padding: 10rpx;
+  height: 100%；
+}
+.title{
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  font-size: 30rpx;
+  background-color:rgb(2, 122, 255);
+  color:#fff;
+  border-radius: 10rpx;
+}
+.more{
+  text-align:center;
+  line-height:60rpx;
+}
