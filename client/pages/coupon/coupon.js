@@ -10,20 +10,20 @@ Page({
     end: false,
   },
   onLoad() {
-    // this.getListTotal();
+    this.getListTotal();
   },
   onShow() {
     my.showLoading();
     this.getListData()
   },
-  // async getListTotal() {
-  //   services.collect("baseData");
-  //   const res = await services.count();
-  //   this.setData({
-  //     total: res.result
-  //   });
+  async getListTotal() {
+    services.collect("baseData");
+    const res = await services.count();
+    this.setData({
+      total: res.result
+    });
     
-  // },
+  },
   async getListData() {
     services.collect("baseData");
     const {currentPage, pageNum, list, total} = this.data;
@@ -39,7 +39,7 @@ Page({
       list: list.concat(...result),
       showLoading: false,
       currentPage: currentPage + 1,
-      total: res.affectedDocs
+      // total: res.affectedDocs
     })
   },
   toCouponDetail(e) {
