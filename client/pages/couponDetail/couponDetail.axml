@@ -1,26 +1,26 @@
 <view class="detailContent">
   <view a:if="{{item}}">
     <view class="imageContent">
-      <image src="{{item.goods_cover[0]}}"/>
+      <image src="{{item.goodImg}}"/>
     </view>
     <view class="baseInfo">
       <view class="title">
-        {{item.goods_title}}
+        {{item.goodName}}
       </view>
-      <view class="desc">
+      <!-- <view class="desc">
         {{item.goods_tag}}
-      </view>
+      </view> -->
       <view class="preprices">
-        <text>原价：<text class="throuth"><text class="symbol">￥</text>{{item.goods_price_high}}</text></text>
+        <text>原价：<text class="throuth"><text class="symbol">￥</text>{{item.good_price}}</text></text>
       </view>
       <view class="prices">
         <text>券额：<text class="symbol">￥</text><text class="number">{{item.coupon_price}}</text></text>
-        <text>现价：<text class="symbol">￥</text><text class="number">{{item.goods_price_low}}</text></text>
+        <text>现价：<text class="symbol">￥</text><text class="number">{{(item.good_price * 100 - item.coupon_price * 100) / 100}}</text></text>
       </view>
       
     </view>
     <view class="code">
-      <text selectable="true">{{item.coupon_code}}</text>
+      <text selectable="true">{{item.taoCommand}}</text>
     </view>
     <view class="tip">
       拷贝当前券码，打开淘宝或者天猫app进行使用！

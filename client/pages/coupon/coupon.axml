@@ -3,9 +3,8 @@
   <view a:for="{{list}}" onTap="toCouponDetail" a:key="{{item._id}}"
     data-id="{{item._id}}">
     <card
-      title="{{item.goods_title}}"
-      thumb="{{item.goods_cover[0]}}"
-      subTitle="{{item.goods_tag}}">
+      title="{{item.goodName}}"
+      thumb="{{item.goodImg}}">
     </card>
   </view>
   <view a:if="{{showLoading}}" class="more">
