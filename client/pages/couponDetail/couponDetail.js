@@ -10,6 +10,8 @@ Page({
     services.collect("baseData");
     const res = await services.find(query);
     console.log(res);
+    const reg = /￥[a-zA-Z0-9]*￥/g;
+    res.result[0].coupon_command = res.result[0].coupon_command.match(reg)[0];
     this.setData({
       item: res.result[0]
     });
