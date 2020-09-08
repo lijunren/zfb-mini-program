@@ -1,5 +1,4 @@
 import {services} from "../../utils/service";
-import { log } from '../../utils';
 Page({
   data: {
     list: [],
@@ -26,14 +25,17 @@ Page({
   },
   async getListData() {
     services.collect("baseData");
-    const {currentPage, pageNum, list, total} = this.data;
+    const {currentPage, pageNum, list} = this.data;
     const option = {
       limit: 10,
-      skip: currentPage * pageNum
+      skip: currentPage * pageNum,
+      sort: {coupon_endTime: 1}
     }
     const res = await services.find({}, option);
     const result = res.result;
-    ;
+    result.forEach(res => {
+      res.real_price = Math.round(res.good_price * 100 - res.coupon_price * 100) / 100;
+    });
     my.hideLoading();
     this.setData({
       list: list.concat(...result),

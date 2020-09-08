@@ -2,10 +2,24 @@
   <view class="title">总会发现您所期望的，欢迎您的光临！</view>
   <view a:for="{{list}}" onTap="toCouponDetail" a:key="{{item._id}}"
     data-id="{{item._id}}">
-    <card
-      title="{{item.goodName}}"
-      thumb="{{item.goodImg}}">
-    </card>
+    <view class="good_content">
+      <view class="good_img">
+        <image mode="aspectFill" src="{{item.goodImg}}"/>
+      </view>
+      <view class="good_info">
+        <text class="good_name" number-of-lines="2">{{item.goodName}}</text>
+        <view class="price_content">
+          <view class="price">
+            <view class="old_price">原价:￥{{item.good_price}}</view>
+            <view class="new_price">现价:￥{{item.real_price}}</view>
+          </view>
+          <view class="coupon_price">
+            <text class="coupon_num">券￥{{item.coupon_price}}</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    
   </view>
   <view a:if="{{showLoading}}" class="more">
     加载中···
